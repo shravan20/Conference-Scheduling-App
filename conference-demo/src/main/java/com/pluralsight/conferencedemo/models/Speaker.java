@@ -4,15 +4,13 @@ import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "speakers")
 @Getter
 @Setter
-public class Speakers {
+public class Speaker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +21,8 @@ public class Speakers {
     private String title;
     private String company;
     private String speaker_bio;
+
+    @ManyToMany(mappedBy = "speakers")
+    private List<Session> sessions;
 
 }
