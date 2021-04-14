@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @Entity(name = "sessions")
+@Table(name = "sessions")
 @Getter
 @Setter
 public class Session {

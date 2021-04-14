@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "speakers")
+@Table(name = "speakers")
 @Getter
 @Setter
 public class Speaker {
