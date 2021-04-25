@@ -18,17 +18,17 @@ public class SessionsController {
     private SessionRepository sessionRepository;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity getSession(@PathVariable Long id) {
+    public ResponseEntity get(@PathVariable Long id) {
         System.out.println("id"+id);
         return  new ResponseEntity<>(sessionRepository.getOne(id), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity create(@RequestBody final Session session){
         return  new ResponseEntity<>(sessionRepository.saveAndFlush(session), HttpStatus.CREATED);
     }
 
-   @GetMapping
+   @GetMapping("/")
    public ResponseEntity list() {
        System.out.println("data");
        return  new ResponseEntity<>(sessionRepository.findAll(), HttpStatus.OK);
